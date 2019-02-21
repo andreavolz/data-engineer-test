@@ -35,12 +35,12 @@
 		@$array_linha = explode ("\t",$array_arquivo[$i]);
 		
 		//Usado para arrumar o campo NAME
-		echo $array_linha[0]."<br>";
+		//echo $array_linha[0]."<br>";
 		$name = explode (" ",$array_linha[0]); //Quebra a data
 		if((strpos($name[0], 'Miss') !== false)||(strpos($name[0], 'Dr.') !== false)||(strpos($name[0], 'Mr.') !== false)||(strpos($name[0], 'Mrs.') !== false)||(strpos($name[0], 'Ms.') !== false)){ //precisa arrumar, pois contem pronome de tratamento
-			echo "OPS: ".$name[0];
-			$array_linha[0] = $name[1].$name[2].$name[3].$name[4];
-			echo $array_linha[0]."<br>";
+			//echo "OPS: ".$name[0];
+			@$array_linha[0] = $name[1].$name[2].$name[3].$name[4];
+			//echo $array_linha[0]."<br>";
 		}
 		
 		//Usado para arrumar o campo PUBLICATION_DATE
@@ -50,7 +50,7 @@
 			$nova_data[1] = $data[1];
 			$nova_data[2] = $data[0];
 			$array_linha[5] = implode("-",$nova_data);
-			echo $array_linha[5]."<br>";
+			//echo $array_linha[5]."<br>";
 		}
 		
 		//Usado para arrumar as incosistências no campo TYPE
@@ -78,5 +78,7 @@
 	}
 	
 	fclose($arquivo);
-	fclose($arquivo2);
+	fclose($arquivo_limpo);
+
+	echo "Limpeza finalizada"."<br>";
 ?>
