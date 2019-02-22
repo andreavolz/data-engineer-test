@@ -43,7 +43,7 @@
 	$sql = $banco->popula_classification('book');
 	$conn->query($sql);
 	
-	$n_linhas = 11; //Comentar para que use todo o arquivo
+	//$n_linhas = 11; //Comentar para que use todo o arquivo
 	for($i;$i<$n_linhas;$i++){
 		@$array_linha = explode ("\t",$array_arquivo[$i]);
 		
