@@ -31,3 +31,6 @@ Tem a base de dados (estrutura e dados) com apenas 10 linhas da tabela carregado
 
 ### indeorum_somente_estrutura.sql
 Tem somente a estrutura do banco de dados.
+
+## Observação
+Caso queira testar o código de forma rápida, basta descomentar a linha 46 do arquivo script.php, que então o código tratará apenas as 10 primeiras linhas do arquivo.
